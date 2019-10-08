@@ -2,7 +2,7 @@
     "name": "sylius/plugin-skeleton",
     "type": "sylius-plugin",
     "keywords": ["sylius", "sylius-plugin"],
-    "description": "Acme example plugin for Sylius.",
+    "description": "Popup plugin Bundle for Sylius E-Commerce.",
     "license": "MIT",
     "require": {
         "php": "^7.2",
@@ -44,8 +44,8 @@
     "prefer-stable": true,
     "autoload": {
         "psr-4": {
-            "Acme\\SyliusExamplePlugin\\": "src/",
-            "Tests\\Acme\\SyliusExamplePlugin\\": "tests/"
+            "Workouse\\PopupPlugin\\": "src/",
+            "Tests\\Workouse\\PopupPlugin\\": "tests/"
         }
     },
     "autoload-dev": {
