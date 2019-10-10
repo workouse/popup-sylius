@@ -1,0 +1,16 @@
+workouse_popup_plugin_admin_popup:
+  resource: |
+    alias: workouse_popup_plugin.popup
+    section: admin
+    path: popup
+    templates: SyliusAdminBundle:Crud
+    redirect: update
+    grid: workouse_popup_plugin_admin_popup
+    vars:
+        all:
+            subheader: workouse_popup_plugin.ui.manage_your_popups
+            templates:
+              form: "@WorkousePopupPlugin/Page/Crud/_form.html.twig"
+        index:
+            icon: 'star outline'
+  type: sylius.resource

@@ -1,0 +1,26 @@
+services:
+  workouse_popup_plugin.listener.admin.menu_builder:
+    class: Workouse\PopupPlugin\Menu\AdminMenuListener
+    tags:
+      - { name: kernel.event_listener, event: sylius.menu.admin.main, method: addAdminMenuItems }
+
+  workouse_popup_plugin.form.type.page:
+    class: Workouse\PopupPlugin\Form\Type\PopupType
+    arguments:
+      - Workouse\PopupPlugin\Entity\Popup
+    tags:
+      - { name: form.type }
+
+  workouse_popup_plugin.form.type.translation.page:
+    class: Workouse\PopupPlugin\Form\Type\PopupTranslationType
+    arguments:
+      - Workouse\PopupPlugin\Entity\PopupTranslation
+    tags:
+      - { name: form.type }
+
+  workouse_popup_plugin.block_event_listener.sylius.shop.layout.after_body:
+    class: Sylius\Bundle\UiBundle\Block\BlockEventListener
+    arguments:
+      - 'WorkousePopupPlugin:shop:popup.html.twig'
+    tags:
+      - { name: kernel.event_listener, event: sonata.block.event.sylius.shop.layout.after_body, method: onBlockEvent }

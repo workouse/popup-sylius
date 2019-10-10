@@ -1,0 +1,16 @@
+workouse_popup_plugin:
+  ui:
+    popups: Popups
+    manage_your_popups: Manage your popups
+    edit_popup: Edit popup
+    new_popup: New Popup
+    title: Title
+    custom_css: Custom CSS
+    css_class: CSS Class
+    enabled: Enabled
+    body: Body
+    content: Content
+    button_text: Button Text
+    button_link: Button Link
+    meta_data: Meta Data
+    rules: Display rules

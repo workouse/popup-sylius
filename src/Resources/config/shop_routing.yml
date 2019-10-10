@@ -1,0 +1,4 @@
+workouse_popup_plugin_popup_index:
+  path: /popup/
+  defaults:
+    _controller: WorkousePopupPlugin:Popup:index
