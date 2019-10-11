@@ -21,7 +21,7 @@ class PopupTranslation extends AbstractTranslation implements ResourceInterface
     protected $id;
 
     /**
-     * @ORM\Column(type="string", nullable=true)
+     * @ORM\Column(type="text", nullable=true)
      */
     protected $content;
 
