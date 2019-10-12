@@ -1,4 +1,6 @@
 ## popup-sylius
+[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/workouse/popup-sylius/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/workouse/popup-sylius/?branch=master) 
+[![Build Status](https://scrutinizer-ci.com/g/workouse/popup-sylius/badges/build.png?b=master)](https://scrutinizer-ci.com/g/workouse/popup-sylius/build-status/master)
 Popup Bundle for Sylius E-Commerce. Allows you to create simple popups.
 
 ## Installation
