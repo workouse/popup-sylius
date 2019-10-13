@@ -1,0 +1,45 @@
+services:
+  workouse_popup_plugin.context.ui.admin.popup:
+    class: Tests\Workouse\PopupPlugin\Behat\Context\Ui\Admin\PopupContext
+    public: true
+    arguments:
+      - '@sylius.behat.shared_storage'
+      - '@sylius.behat.current_page_resolver'
+      - '@sylius.behat.notification_checker'
+      - '@workouse_popup_plugin_admin_popup.index'
+      - '@workouse_popup_plugin_admin_popup.create'
+      - '@workouse_popup_plugin.factory.popup'
+      - '@workouse_popup_plugin.repository.popup'
+      - '@workouse_popup_plugin_admin_popup.update'
+      - '@doctrine.orm.default_entity_manager'
+
+  workouse_popup_plugin.context.ui.shop.popup:
+    class: Tests\Workouse\PopupPlugin\Behat\Context\Ui\Shop\PopupContext
+    public: true
+    arguments:
+      - '@workouse_popup_plugin.behat.page.shop.home'
+
+  workouse_popup_plugin_admin_popup.index:
+    class: Tests\Workouse\PopupPlugin\Behat\Page\Admin\IndexPage
+    parent: sylius.behat.page.admin.crud.index
+    public: false
+    arguments:
+      - 'workouse_popup_plugin_admin_popup_index'
+
+  workouse_popup_plugin_admin_popup.create:
+    class: Tests\Workouse\PopupPlugin\Behat\Page\Admin\CreatePage
+    parent: sylius.behat.page.admin.crud.create
+    arguments:
+      - 'workouse_popup_plugin_admin_popup_create'
+
+  workouse_popup_plugin_admin_popup.update:
+    class: Tests\Workouse\PopupPlugin\Behat\Page\Admin\UpdatePage
+    parent: sylius.behat.page.admin.crud.update
+    arguments:
+      - 'workouse_popup_plugin_admin_popup_update'
+
+  workouse_popup_plugin.behat.page.shop.home:
+    class: Tests\Workouse\PopupPlugin\Behat\Page\Shop\HomePage
+    parent: sylius.behat.page.shop.home
+    arguments:
+      - 'sylius_shop_homepage'

@@ -38,7 +38,7 @@ class Popup implements ResourceInterface, TranslatableInterface
 
     /**
      * @ORM\Column(type="string")
-     * @Assert\NotBlank()
+     * @Assert\NotBlank(message="workouse_popup_plugin.title.not_blank")
      */
     protected $title;
 

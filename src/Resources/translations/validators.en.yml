@@ -1,0 +1,3 @@
+workouse_popup_plugin:
+  title:
+    not_blank: Title cannot be blank.
