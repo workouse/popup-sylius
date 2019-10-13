@@ -5,13 +5,12 @@ namespace Workouse\PopupPlugin\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 use Sylius\Component\Resource\Model\AbstractTranslation;
-use Sylius\Component\Resource\Model\ResourceInterface;
 
 /**
  * @ORM\Entity()
  * @ORM\Table(name="workouse_popup_plugin_popup_translation")
  */
-class PopupTranslation extends AbstractTranslation implements ResourceInterface
+class PopupTranslation extends AbstractTranslation implements PopupTranslationInterface
 {
     /**
      * @ORM\Id()

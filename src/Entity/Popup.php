@@ -4,8 +4,6 @@
 namespace Workouse\PopupPlugin\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
-use Sylius\Component\Resource\Model\ResourceInterface;
-use Sylius\Component\Resource\Model\TranslatableInterface;
 use Sylius\Component\Resource\Model\TranslatableTrait;
 use Sylius\Component\Resource\Model\TranslationInterface;
 use Symfony\Component\Validator\Constraints as Assert;
@@ -14,10 +12,11 @@ use Symfony\Component\Validator\Constraints as Assert;
  * @ORM\Entity()
  * @ORM\Table(name="workouse_popup_plugin_popup")
  */
-class Popup implements ResourceInterface, TranslatableInterface
+class Popup implements PopupInterface
 {
     use TranslatableTrait {
         __construct as private initializeTranslationsCollection;
+        getTranslation as private doGetTranslation;
     }
 
     const RULES = [
@@ -122,7 +121,18 @@ class Popup implements ResourceInterface, TranslatableInterface
         return $this->getTranslation()->getButtonLink();
     }
 
-    protected function createTranslation(): TranslationInterface
+    /**
+     * @return PopupTranslationInterface
+     */
+    public function getTranslation(?string $locale = null): TranslationInterface
+    {
+        /** @var PopupTranslationInterface $translation */
+        $translation = $this->doGetTranslation($locale);
+
+        return $translation;
+    }
+
+    protected function createTranslation(): ?PopupTranslationInterface
     {
         return new PopupTranslation();
     }
