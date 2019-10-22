@@ -20,6 +20,11 @@ class PopupTranslation extends AbstractTranslation implements PopupTranslationIn
     protected $id;
 
     /**
+     * @ORM\Column(type="string", nullable=true)
+     */
+    protected $title;
+
+    /**
      * @ORM\Column(type="text", nullable=true)
      */
     protected $content;
@@ -37,6 +42,16 @@ class PopupTranslation extends AbstractTranslation implements PopupTranslationIn
     public function getId()
     {
         return $this->id;
+    }
+
+    public function getTitle()
+    {
+        return $this->title;
+    }
+
+    public function setTitle($title): void
+    {
+        $this->title = $title;
     }
 
     public function getContent()

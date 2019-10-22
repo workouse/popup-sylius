@@ -17,8 +17,9 @@ class PopupType extends AbstractResourceType
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder
-            ->add('title', TextType::class, [
-                'label' => 'workouse_popup_plugin.ui.title'
+            ->add('code', TextType::class, [
+                'label' => 'workouse_popup_plugin.ui.code',
+                'required' => false
             ])
             ->add('customCss', TextareaType::class, [
                 'label' => 'workouse_popup_plugin.ui.custom_css',
@@ -30,6 +31,9 @@ class PopupType extends AbstractResourceType
             ])
             ->add('enabled', CheckboxType::class, [
                 'label' => 'workouse_popup_plugin.ui.enabled',
+            ])
+            ->add('closeEnabled', CheckboxType::class, [
+                'label' => 'workouse_popup_plugin.ui.close_button_enabled',
             ])
             ->add('translations', ResourceTranslationsType::class, [
                 'label' => 'workouse_popup_plugin.ui.translations',

@@ -8,9 +8,9 @@ use Sylius\Component\Resource\Model\TranslatableInterface;
 
 interface PopupInterface extends ResourceInterface, TranslatableInterface
 {
-    public function getTitle();
+    public function getCode();
 
-    public function setTitle($title);
+    public function setCode($code);
 
     public function getCustomCss();
 
@@ -29,4 +29,8 @@ interface PopupInterface extends ResourceInterface, TranslatableInterface
     public function getButtonText();
 
     public function getButtonLink();
+
+    public function getTitle();
+
+    public function setTitle($title);
 }

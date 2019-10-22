@@ -8,6 +8,10 @@ use Sylius\Component\Resource\Model\TranslationInterface;
 
 interface PopupTranslationInterface extends ResourceInterface, TranslationInterface
 {
+    public function getTitle();
+
+    public function setTitle($title);
+
     public function getContent();
 
     public function setContent($content);

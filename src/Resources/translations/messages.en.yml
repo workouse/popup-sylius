@@ -14,3 +14,5 @@ workouse_popup_plugin:
     button_link: Button Link
     meta_data: Meta Data
     rules: Display rules
+    close_button_enabled: Close Button Enabled
+    code: Code

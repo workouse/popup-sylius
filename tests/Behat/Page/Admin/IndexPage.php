@@ -7,8 +7,8 @@ use Sylius\Behat\Page\Admin\Crud\IndexPage as BaseIndexPage;
 
 class IndexPage extends BaseIndexPage
 {
-    public function deletePopup(string $title): void
+    public function deletePopup(string $code): void
     {
-        $this->deleteResourceOnPage(['title' => $title]);
+        $this->deleteResourceOnPage(['code' => $code]);
     }
 }

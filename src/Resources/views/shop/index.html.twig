@@ -4,21 +4,28 @@
     </style>
 
     <div class="ui modal {{ popup.cssClass }}" id="workouse-popup-plugin-modal">
-        <div class="header">{{ popup.title }}</div>
+        {% if popup.title %}
+            <div class="header">{{ popup.title }}</div>
+        {% endif %}
         <div class="content">
             {{ popup.content|raw }}
         </div>
-        <div class="actions">
-            <div class="ui black deny button">
-                Close
+        {% if popup.closeEnabled or popup.buttonText %}
+            <div class="actions">
+                {% if popup.closeEnabled %}
+                    <div class="ui black deny button">
+                        Close
+                    </div>
+                {% endif %}
+                {% if popup.buttonText %}
+                    <a href="{{ popup.buttonLink }}" class="ui positive right labeled icon button">
+                        {{ popup.buttonText }}
+                        <i class="checkmark icon"></i>
+                    </a>
+                {% endif %}
             </div>
-            {% if popup.buttonText %}
-                <a href="{{ popup.buttonLink }}" class="ui positive right labeled icon button">
-                    {{ popup.buttonText }}
-                    <i class="checkmark icon"></i>
-                </a>
-            {% endif %}
-        </div>
+        {% endif %}
+
     </div>
     <div id="popup" data-popup-id="{{ popup.id }}" data-popup-rules="{{ popup.rules|json_encode }}"></div>
     <script>

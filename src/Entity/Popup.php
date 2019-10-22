@@ -37,9 +37,9 @@ class Popup implements PopupInterface
 
     /**
      * @ORM\Column(type="string")
-     * @Assert\NotBlank(message="workouse_popup_plugin.title.not_blank")
+     * @Assert\NotBlank(message="workouse_popup_plugin.code.not_blank")
      */
-    protected $title;
+    protected $code;
 
     /**
      * @ORM\Column(type="text", nullable=true)
@@ -57,6 +57,11 @@ class Popup implements PopupInterface
     protected $enabled = false;
 
     /**
+     * @ORM\Column(type="boolean")
+     */
+    protected $closeEnabled = true;
+
+    /**
      * @ORM\Column(type="json", nullable=true)
      */
     protected $rules = self::RULES;
@@ -66,14 +71,14 @@ class Popup implements PopupInterface
         return $this->id;
     }
 
-    public function getTitle()
+    public function getCode()
     {
-        return $this->title;
+        return $this->code;
     }
 
-    public function setTitle($title): void
+    public function setCode($code): void
     {
-        $this->title = $title;
+        $this->code = $code;
     }
 
     public function getCustomCss()
@@ -153,4 +158,23 @@ class Popup implements PopupInterface
         $this->rules = $rules;
     }
 
+    public function isCloseEnabled(): bool
+    {
+        return $this->closeEnabled;
+    }
+
+    public function setCloseEnabled(bool $closeEnabled): void
+    {
+        $this->closeEnabled = $closeEnabled;
+    }
+
+    public function getTitle()
+    {
+        return $this->getTranslation()->getTitle();
+    }
+
+    public function setTitle($title)
+    {
+        return $this->getTranslation()->setTitle($title);
+    }
 }

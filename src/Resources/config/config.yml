@@ -17,6 +17,9 @@ sylius_grid:
         options:
           class: Workouse\PopupPlugin\Entity\Popup
       fields:
+        code:
+          type: string
+          label: workouse_popup_plugin.ui.code
         title:
           type: string
           label: workouse_popup_plugin.ui.title

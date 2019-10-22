@@ -79,6 +79,15 @@ final class PopupContext implements Context
     }
 
     /**
+     * @When I fill the code with :code
+     */
+    public function iFillTheCodeWith(string $code): void
+    {
+        $this->resolveCurrentPage()->fillCode($code);
+        $this->sharedStorage->set('code', $code);
+    }
+
+    /**
      * @When I fill the title with :title
      */
     public function iFillTheTitleWith(string $title): void
@@ -139,14 +148,16 @@ final class PopupContext implements Context
         $this->savePopup($popup);
     }
 
-    private function createPopup(?string $title = null, ?bool $enabled = true)
+    private function createPopup(?string $code = null, ?bool $enabled = true)
     {
         $popup = $this->popupFactory->createNew();
 
-        if (null === $title) {
-            $title = uniqid();
+        if (null === $code) {
+            $code = uniqid();
         }
-        $popup->setTitle($title);
+
+        $popup->setCurrentLocale('en_US');
+        $popup->setCode($code);
         $popup->setEnabled($enabled);
 
         return $popup;
@@ -172,7 +183,7 @@ final class PopupContext implements Context
     public function iDeleteThisPopup(): void
     {
         $popup = $this->sharedStorage->get('popup');
-        $this->indexPage->deletePopup($popup->getTitle());
+        $this->indexPage->deletePopup($popup->getCode());
     }
 
     /**

@@ -9,6 +9,7 @@ Feature: Adding new popup
   @ui
   Scenario: Adding popup
     When I go to the create popup
+    And I fill the code with "popup_with_code"
     And I fill the title with "popup_with_title"
     And I fill the enabled with "true"
     And I try to add it
@@ -18,7 +19,7 @@ Feature: Adding new popup
   Scenario: Adding new popup with blank data
     When I go to the create popup
     And I add it
-    And I should be notified that "Title" fields cannot be blank
+    And I should be notified that "Code" fields cannot be blank
 
   @ui
   Scenario: Deleting popup

@@ -12,7 +12,12 @@ class CreatePage extends BaseCreatePage
 
     use ContainsErrorTrait;
 
-    public function filltitle(string $title): void
+    public function fillCode(string $code): void
+    {
+        $this->getDocument()->fillField('Code', $code);
+    }
+
+    public function fillTitle(string $title): void
     {
         $this->getDocument()->fillField('Title', $title);
     }
