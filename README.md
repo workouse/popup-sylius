@@ -16,9 +16,15 @@ Add plugin dependencies to your `config/bundles.php` file:
 return [
     ...
 
+    FOS\CKEditorBundle\FOSCKEditorBundle::class => ['all' => true], // WYSIWYG editor
     Workouse\PopupPlugin\WorkousePopupPlugin::class => ['all' => true],
 ];
 ```
+
+The first line above (FOSCKEditorBundle) might have been already added during composer require command.
+
+Install WYSIWYG editor ([FOS CKEditor](https://symfony.com/doc/master/bundles/FOSCKEditorBundle/usage/ckeditor.html))
+
 
 Import required config in your `config/packages/_sylius.yaml` file:
 
@@ -46,6 +52,8 @@ Finish the installation by updating the database schema and installing assets:
 ```
 $ bin/console doctrine:migrations:diff
 $ bin/console doctrine:migrations:migrate
+$ bin/console assets:install --symlink
+$ bin/console sylius:theme:assets:install --symlink
 $ bin/console cache:clear
 ```
 
