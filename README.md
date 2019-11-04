@@ -25,6 +25,9 @@ The first line above (FOSCKEditorBundle) might have been already added during co
 
 Install WYSIWYG editor ([FOS CKEditor](https://symfony.com/doc/master/bundles/FOSCKEditorBundle/usage/ckeditor.html))
 
+```bash
+$ bin/console ckeditor:install
+```
 
 Import required config in your `config/packages/_sylius.yaml` file:
 
