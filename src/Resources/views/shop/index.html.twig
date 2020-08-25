@@ -39,7 +39,7 @@
         const popupId = popup.getAttribute('data-popup-id');
         const rules = JSON.parse(popup.getAttribute('data-popup-rules'));
 
-        const [successCookieDuration] = rules;
+        const successCookieDuration = rules['Success cookie duration'];
 
         if (successCookieDuration) {
             const wp = localStorage.getItem(`WP_${popupId}`)
