@@ -9,19 +9,19 @@ use Sylius\Component\Resource\Model\TranslationInterface;
 
 interface PopupTranslationInterface extends ResourceInterface, TranslationInterface
 {
-    public function getTitle();
+    public function getTitle(): ?string;
 
-    public function setTitle($title);
+    public function setTitle(string $title): void;
 
-    public function getContent();
+    public function getContent(): ?string;
 
-    public function setContent($content);
+    public function setContent(string $content): void;
 
-    public function getButtonText();
+    public function getButtonText(): ?string;
 
-    public function setButtonText($buttonText);
+    public function setButtonText(string $buttonText): void;
 
-    public function getButtonLink();
+    public function getButtonLink(): ?string;
 
-    public function setButtonLink($buttonLink);
+    public function setButtonLink(string $buttonLink): void;
 }

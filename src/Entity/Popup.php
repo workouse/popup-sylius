@@ -20,7 +20,7 @@ class Popup implements PopupInterface
         getTranslation as private doGetTranslation;
     }
 
-    const RULES = [
+    public const RULES = [
         'workouse_popup_plugin.ui.success_cookie_duration' => 'successCookieDuration',
     ];
 
@@ -30,6 +30,7 @@ class Popup implements PopupInterface
     }
 
     /**
+     * @var int
      * @ORM\Id()
      * @ORM\GeneratedValue(strategy="AUTO")
      * @ORM\Column(type="integer")
@@ -37,67 +38,73 @@ class Popup implements PopupInterface
     protected $id;
 
     /**
+     * @var string|null
      * @ORM\Column(type="string")
      * @Assert\NotBlank(message="workouse_popup_plugin.code.not_blank")
      */
     protected $code;
 
     /**
+     * @var string|null
      * @ORM\Column(type="text", nullable=true)
      */
     protected $customCss;
 
     /**
+     * @var string|null
      * @ORM\Column(type="string", nullable=true)
      */
     protected $cssClass;
 
     /**
+     * @var bool
      * @ORM\Column(type="boolean")
      */
     protected $enabled = false;
 
     /**
+     * @var bool
      * @ORM\Column(type="boolean")
      */
     protected $closeEnabled = true;
 
     /**
+     * @var array
      * @ORM\Column(type="json", nullable=true)
      */
     protected $rules = self::RULES;
 
-    public function getId()
+    public function getId(): int
     {
         return $this->id;
     }
 
-    public function getCode()
+    public function getCode(): ?string
     {
         return $this->code;
     }
 
-    public function setCode($code): void
+    public function setCode(string $code): void
     {
         $this->code = $code;
     }
 
-    public function getCustomCss()
+    public function getCustomCss(): ?string
     {
         return $this->customCss;
     }
 
-    public function setCustomCss($customCss): void
+    public function setCustomCss(string $customCss): void
     {
         $this->customCss = $customCss;
     }
 
-    public function getCssClass()
+    public function getCssClass(): ?string
     {
         return $this->cssClass;
     }
 
-    public function setCssClass($cssClass): void
+    public function setCssClass(string $cssClass): void
     {
         $this->cssClass = $cssClass;
     }
@@ -112,17 +119,17 @@ class Popup implements PopupInterface
         $this->enabled = $enabled;
     }
 
-    public function getContent()
+    public function getContent(): ?string
     {
         return $this->getTranslation()->getContent();
     }
 
-    public function getButtonText()
+    public function getButtonText(): ?string
     {
         return $this->getTranslation()->getButtonText();
     }
 
-    public function getButtonLink()
+    public function getButtonLink(): ?string
     {
         return $this->getTranslation()->getButtonLink();
     }
@@ -144,16 +151,13 @@ class Popup implements PopupInterface
     }
 
     /**
-     * @return array
+     * @return array|string[]
      */
     public function getRules(): array
     {
         return $this->rules;
     }
 
-    /**
-     * @param array $rules
-     */
     public function setRules(array $rules): void
     {
         $this->rules = $rules;
@@ -169,13 +173,13 @@ class Popup implements PopupInterface
         $this->closeEnabled = $closeEnabled;
     }
 
-    public function getTitle()
+    public function getTitle(): ?string
     {
         return $this->getTranslation()->getTitle();
     }
 
-    public function setTitle($title)
+    public function setTitle(string $title): void
     {
-        return $this->getTranslation()->setTitle($title);
+        $this->getTranslation()->setTitle($title);
     }
 }

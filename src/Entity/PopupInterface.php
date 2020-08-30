@@ -9,29 +9,33 @@ use Sylius\Component\Resource\Model\TranslatableInterface;
 
 interface PopupInterface extends ResourceInterface, TranslatableInterface
 {
-    public function getCode();
+    public function getCode(): ?string;
 
-    public function setCode($code);
+    public function setCode(string $code): void;
 
-    public function getCustomCss();
+    public function getCustomCss(): ?string;
 
-    public function setCustomCss($customCss);
+    public function setCustomCss(string $customCss): void;
 
-    public function getCssClass();
+    public function getCssClass(): ?string;
 
-    public function setCssClass($cssClass);
+    public function setCssClass(string $cssClass): void;
 
-    public function isEnabled();
+    public function isEnabled(): bool;
 
-    public function setEnabled(bool $enabled);
+    public function setEnabled(bool $enabled): void;
 
-    public function getContent();
+    public function getContent(): ?string;
 
-    public function getButtonText();
+    public function getButtonText(): ?string;
 
-    public function getButtonLink();
+    public function getButtonLink(): ?string;
 
-    public function getTitle();
+    public function getTitle(): ?string;
 
-    public function setTitle($title);
+    public function setTitle(string $title): void;
+
+    public function getRules(): array;
+
+    public function setRules(array $rules): void;
 }

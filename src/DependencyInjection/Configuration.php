@@ -15,12 +15,7 @@ final class Configuration implements ConfigurationInterface
     public function getConfigTreeBuilder(): TreeBuilder
     {
         $treeBuilder = new TreeBuilder('workouse_popup_plugin');
-        if (\method_exists($treeBuilder, 'getRootNode')) {
-            $rootNode = $treeBuilder->getRootNode();
-        } else {
-            // BC layer for symfony/config 4.1 and older
-            $rootNode = $treeBuilder->root('workouse_popup_plugin');
-        }
+        $rootNode = $treeBuilder->getRootNode();
 
         return $treeBuilder;
     }
