@@ -1,5 +1,6 @@
 <?php
 
+declare(strict_types=1);
 
 namespace Workouse\PopupPlugin\Controller;
 
@@ -12,10 +13,11 @@ class PopupController extends AbstractController
     {
         /** @var Popup $popup */
         $popup = $this->getDoctrine()->getRepository(Popup::class)->findOneBy([
-            'enabled' => true
+            'enabled' => true,
         ]);
+
         return $this->render('@WorkousePopupPlugin/shop/index.html.twig', [
-            'popup' => $popup
+            'popup' => $popup,
         ]);
     }
 }

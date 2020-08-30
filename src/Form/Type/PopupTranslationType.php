@@ -1,8 +1,8 @@
 <?php
 
+declare(strict_types=1);
 
 namespace Workouse\PopupPlugin\Form\Type;
-
 
 use FOS\CKEditorBundle\Form\Type\CKEditorType;
 use Sylius\Bundle\ResourceBundle\Form\Type\AbstractResourceType;
@@ -16,19 +16,19 @@ class PopupTranslationType extends AbstractResourceType
         $builder
             ->add('title', TextType::class, [
                 'label' => 'workouse_popup_plugin.ui.title',
-                'required' => false
+                'required' => false,
             ])
             ->add('content', CKEditorType::class, [
                 'label' => 'workouse_popup_plugin.ui.content',
-                'required' => false
+                'required' => false,
             ])
             ->add('buttonText', TextType::class, [
                 'label' => 'workouse_popup_plugin.ui.button_text',
-                'required' => false
+                'required' => false,
             ])
             ->add('buttonLink', TextType::class, [
                 'label' => 'workouse_popup_plugin.ui.button_link',
-                'required' => false
+                'required' => false,
             ]);
     }
 

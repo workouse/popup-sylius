@@ -1,15 +1,16 @@
 <?php
 
+declare(strict_types=1);
 
 namespace Workouse\PopupPlugin\Form\Type;
 
 use Sylius\Bundle\ResourceBundle\Form\Type\AbstractResourceType;
 use Sylius\Bundle\ResourceBundle\Form\Type\ResourceTranslationsType;
 use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
-use Symfony\Component\Form\Extension\Core\Type\TextType;
-use Symfony\Component\Form\Extension\Core\Type\TextareaType;
-use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
+use Symfony\Component\Form\Extension\Core\Type\TextareaType;
+use Symfony\Component\Form\Extension\Core\Type\TextType;
+use Symfony\Component\Form\FormBuilderInterface;
 use Workouse\PopupPlugin\Entity\Popup;
 
 class PopupType extends AbstractResourceType
@@ -19,15 +20,15 @@ class PopupType extends AbstractResourceType
         $builder
             ->add('code', TextType::class, [
                 'label' => 'workouse_popup_plugin.ui.code',
-                'required' => false
+                'required' => false,
             ])
             ->add('customCss', TextareaType::class, [
                 'label' => 'workouse_popup_plugin.ui.custom_css',
-                'required' => false
+                'required' => false,
             ])
             ->add('cssClass', TextType::class, [
                 'label' => 'workouse_popup_plugin.ui.css_class',
-                'required' => false
+                'required' => false,
             ])
             ->add('enabled', CheckboxType::class, [
                 'label' => 'workouse_popup_plugin.ui.enabled',
@@ -44,7 +45,7 @@ class PopupType extends AbstractResourceType
                 'compound' => true,
                 'multiple' => true,
                 'expanded' => true,
-                'label' => 'workouse_popup_plugin.ui.rules'
+                'label' => 'workouse_popup_plugin.ui.rules',
             ]);
     }
 
