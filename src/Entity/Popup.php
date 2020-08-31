@@ -72,7 +72,7 @@ class Popup implements PopupInterface
      * @var array
      * @ORM\Column(type="json", nullable=true)
      */
-    protected $rules = self::RULES;
+    protected $rules = [];
 
     public function getId(): int
     {
