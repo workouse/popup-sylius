@@ -21,7 +21,7 @@ class Popup implements PopupInterface
     }
 
     public const RULES = [
-        'workouse_popup_plugin.ui.success_cookie_duration' => 'successCookieDuration',
+        'workouse_popup_plugin.ui.show_only_once' => 'showOnlyOnce',
     ];
 
     public function __construct()

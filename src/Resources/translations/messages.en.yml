@@ -16,4 +16,4 @@ workouse_popup_plugin:
     rules: Display rules
     close_button_enabled: Close Button Enabled
     code: Code
-    success_cookie_duration: Success cookie duration
+    show_only_once: Show only once
